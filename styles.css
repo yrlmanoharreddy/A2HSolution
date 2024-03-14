@@ -1,0 +1,394 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(100, 97, 97, 0.71); /* Maintain default background for overall consistency */
+}
+
+header, footer {
+     /* Adding gradient to header and footer */
+    padding: 1px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+.video-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Take at least the full height of the viewport */
+    width: 100%; /* Take the full width of the viewport */
+  }
+  
+  .rounded-video {
+    border-radius: 20px; /* Adjust the px value for curvature */
+    overflow: hidden; /* Ensures the video respects the border-radius */
+    /* Adjust width or max-width for your video size, if necessary */
+    max-width: 1000px; /* Example max-width */
+    width: 100%; /* Makes the video responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .video-services {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 45vh; /* Take at least the full height of the viewport */
+    width: 60%; /* Take the full width of the viewport */
+  }
+  
+  .round-video {
+    border-radius: 20px; /* Adjust the px value for curvature */
+    overflow: hidden; /* Ensures the video respects the border-radius */
+    /* Adjust width or max-width for your video size, if necessary */
+    max-width: 600px; /* Example max-width */
+    width: 100%; /* Makes the video responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+@keyframes flipHorizontal {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes rollInMenu {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Apply the animation to the nav element */
+  .nav-links {
+    animation: rollInMenu 1s ease-out forwards;
+  }
+
+.logo img {
+    height: 100px; /* Adjust as needed */
+    width: 100px; /* Ensure width and height are the same for a perfect circle */
+    border-radius: 50%; /* This creates the circular shape */
+    object-fit: cover; /* Ensures the image covers the space without distorting */
+    animation: flipHorizontal 5s linear infinite; /* Apply the spin animation */
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 5px; /* Adjusted to apply spacing between menu items */
+    padding: 2.5px 5px;
+    background: linear-gradient(to bottom, lightgoldenrodyellow 0%, rgb(255, 210, 48) 100%); /* Light gold color with some transparency */
+    border-radius: 20px; /* Curved corners */
+    transition: background-color 1s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Initial setup for all nav links */
+.nav-links li {
+    /* Other styles... */
+    opacity: 0; /* Start them invisible */
+    animation: rollInMenu 0.5s ease-out forwards;
+}
+
+/* Individual delays */
+.nav-links li:nth-child(1) { animation-delay: 0.2s; }
+.nav-links li:nth-child(2) { animation-delay: 0.4s; }
+.nav-links li:nth-child(3) { animation-delay: 0.65s; }
+.nav-links li:nth-child(4) { animation-delay: 0.8s; }
+.nav-links li:nth-child(5) { animation-delay: 1.0s; }
+
+.nav-links a {
+    display: block; /* Makes the anchor tags fill the li for a larger clickable area */
+    padding: 10px 5px; /* Adjust padding as needed for spacing inside the curved rectangles */
+    color: black; /* Black text */
+    text-decoration: none; /* Removes underline from links */
+    transition: color 1s ease-in-out, background-color 1s ease-in-out; /* Smooth transition for hover effects */
+    background-clip: padding-box; /* Ensures the background only covers the padding area, not the border */
+}
+
+.nav-links li:hover {
+    background: rgb(255, 210, 48); /* Solid light gold color on hover */
+}
+
+.nav-links a:hover {
+    color: black; /* Keeps text color consistent, adjust if needed */
+    text-decoration: none; /* Optional, if you want to underline on hover: `underline` */
+}
+
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Ensure this CSS is correctly included in your styles */
+.section-content {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out;
+}
+
+.section-content.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+/* Add at the end of your existing CSS */
+/* Initial state for services content */
+
+.services-image {
+    flex-basis: 25%;
+    max-width: 25%; /* Ensures the image container doesn't exceed 30% of the parent container's width */
+}
+
+.services-image img {
+    width: 100%; /* Makes the image responsive within its container */
+    height: auto;
+    border-radius: 20px; /* Adjust the radius as needed */ /* Add padding to create a gap between content and curved edges */
+    margin-right: 20px; /* Maintains the aspect ratio of the image */
+}
+
+.services-text {
+    flex-basis: 75%;
+    max-width: 75%; /* Ensures the text container doesn't exceed 70% of the parent container's width */
+    padding-left: 20px; /* Optional: Adds some spacing between the image and the text */
+}
+
+/* Updated section styles for #services to accommodate new layout */
+#services {
+    background: linear-gradient(to bottom, lightgoldenrodyellow 0%, rgb(255, 210, 48) 100%);
+    color: black;
+    text-align: left; /* Adjust text alignment as needed */
+    border-radius: 20px; /* Adjust the radius as needed */
+    padding: 20px; /* Add padding to create a gap between content and curved edges */
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px; /* Add margin to create a gap between this section and the next */
+}
+
+
+.about-text {
+    flex-basis: 75%;
+    max-width: 75%;
+    /* padding-right: 20px; Optionally add padding to separate text from the image */
+}
+
+.about-image {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.about-image img {
+    width: 100%; /* Makes the image responsive within its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+}
+
+/* Ensure the background styles for #about are already suitable or adjust as necessary */
+#about {
+    background: linear-gradient(to bottom, #434343, #000000); /* Dark gradient for contrast */
+    color: lightgoldenrodyellow;
+    text-align: left;
+    border-radius: 20px; /* Adjust the radius as needed */
+    padding: 20px; /* Add padding to create a gap between content and curved edges */
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px; /* Adjust if needed */
+}
+
+
+/* Updated section styles with gradient backgrounds */
+#careers {
+    background: linear-gradient(to bottom, lightgoldenrodyellow 0%, rgb(255, 210, 48) 100%); /* Light gold gradient */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px; /* Adjust the radius as needed */
+    padding: 20px; /* Add padding to create a gap between content and curved edges */
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#contact {
+    background: linear-gradient(to bottom, #434343, #000000); /* Dark gradient for contrast */
+    color: lightgoldenrodyellow;
+    padding: 20px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.center {
+    display: block;
+    margin: 0 auto; /* This will horizontally center the image */
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px;
+    }
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background: linear-gradient(to bottom, #434343, #000000); /* Grey background */
+    color: lightgoldenrodyellow; /* Light gold text */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Slight rounding of corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    margin-top: 10px; /* Space above the button */
+}
+
+.read-more-btn:hover {
+    background-color: #717171; /* Darker grey on hover */
+    color: #ffd700; /* Brighter gold text on hover */
+}
+.read-more-abt {
+    display: inline-block;
+    padding: 5px 10px;
+    background: linear-gradient(to bottom, lightgoldenrodyellow 0%, rgb(255, 210, 48) 100%); /* Grey background */
+    color: #000000; /* Light gold text */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Slight rounding of corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    margin-top: 10px; /* Space above the button */
+}
+
+.read-more-abt:hover {
+    background-color: #ffd700; /* Darker grey on hover */
+    color: #717171; /* Brighter gold text on hover */
+}
+
+footer {
+    background: rgba(100, 97, 97, 0.71); /* Footer gradient */
+    color: lightgoldenrodyellow;
+    font-size: 0.8rem;
+    padding: 3px 0;
+    text-align: right;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+   
+     /* Adjust color as needed */
+    color: lightgoldenrodyellow;
+    
+}
+
+.contact-grid div {
+    padding: 25px;
+    
+}
+
+.contact-reach-us p, .contact-follow-us a {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    gap: 10px;
+}
+
+.contact-our-strengths {
+    text-align: left;
+}
+.contact-our-strengths ul {
+    padding: 0;
+    list-style-position: inside;
+    line-height: 1.6;
+}
+
+.contact-our-strengths li {
+    list-style-type: disc; /* Or none if you don't want any bullet points */
+}
+
+.contact-follow-us {
+    text-align: center;
+}
+
+.contact-follow-us a {
+    display: inline-block;
+
+}
+
+.contact-follow-us img {
+    transition: transform 0.3s ease;
+}
+
+.contact-follow-us a:hover img {
+    transform: scale(1.1);
+}
+
+.contact-reach-us i {
+    margin-right: 8px; /* Add some space between the icon and the text */
+    width: 20px; /* Specify a width if necessary */
+    text-align: center; /* Center the icon if it's a block or has a width */
+}
+
+/* Example to change the color of the icons */
+.contact-reach-us .fa-envelope {
+    color: lightgoldenrodyellow; /* Email icon color */
+}
+
+.contact-reach-us .fa-phone {
+    color: lightgoldenrodyellow; /* Phone icon color */
+}
+
+.contact-reach-us .fa-map-marker {
+    color:lightgoldenrodyellow; /* Address icon color */
+}
+/* Add styles for h2 and ul here as needed */
+.contact-follow-us .social-icon {
+    margin: 0 10px; /* Spacing between icons */
+    color: #000; /* Default icon color */
+    font-size: 20px; /* Size of the icons */
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change on hover */
+}
+
+.contact-follow-us .social-icon:hover {
+    color: #1da1f2; /* Change the color on hover, example for Twitter's color */
+}
+
+/* You can also set specific colors for each type of social media icon */
+.contact-follow-us .fa-facebook-f { color: #3b5998; }
+.contact-follow-us .fa-twitter { color: #1da1f2; }
+.contact-follow-us .fa-linkedin-in { color: #0077b5; }
+.contact-follow-us .fa-youtube { color: #ff0000; }
+
+.contact-logo img {
+    border-radius: 20px;
+    overflow: hidden;/* This creates the circular shape */
+}

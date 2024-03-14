@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A2H Technologies</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+<header>
+    <nav>
+      <div class="logo"><img src="logo_2.png" alt="A2H Logo" style="height: 100px;"></div>
+        <ul class="nav-links">
+            <li><a href="Homepage.html"><b>Home</b></a></li>
+            <li><a href="#services"><b>About Us</b></a></li>
+            <li><a href="#contact"><b>Contact</b></a></li>
+        </ul>
+    </nav>
+    <div class="video-container">
+      <video class="rounded-video" autoplay loop muted>
+        <source src="Slides.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+</header>
+
+<section id="services">
+  <div class="section-content">
+    <div class="video-services">
+      <video class="round-video" autoplay loop muted>
+        <source src="Services.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="services-text slide-in-right">
+        <h2>Services</h2>
+        <p>We provide innovative technology solutions designed to enhance your business's efficiency and productivity.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+    <div class="contact-grid">
+        <div class="contact-logo">
+            <!-- Assuming you have a logo image called 'logo.png' in the same directory -->
+            <img src="logo_2.png" alt="Company Logo" style="width: 100%;">
+        </div>
+        <div class="contact-reach-us">
+            <h2>Reach Us</h2>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> info@n2force.com</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> (309) 282-9957</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> 1560 Wall Street <br>Suite 216 <br>Naperville, IL 60563</p>
+        </div>
+        <div class="contact-our-strengths">
+            <h2>Our Strengths</h2>
+            <ul>
+                <li>Cloud Migration</li>
+                <li>Blockchain Solutions</li>
+                <li>Hadoop Sizing</li>
+                <li>Big Data Implementations</li>
+                <li>IT Staffing</li>
+            </ul>
+        </div>
+        <div class="contact-follow-us">
+            <h2>Follow Us</h2>
+            <a href="https://www.facebook.com/yourpage" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/yourchannel" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+  </section>
+
+<footer>
+    <p><b>© 2024 A2H Technologies. All rights reserved.</b></p>
+</footer>
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                // Optionally reset the animation if you want it to trigger every time the section comes into view
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, {
+        threshold: 0.1 // This can be adjusted based on your needs
+    });
+
+    // Target elements with the 'services-content' class
+    document.querySelectorAll('.section-content').forEach(el => observer.observe(el));
+});
+</script>
+</body>
+</html>
