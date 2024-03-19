@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About Us - A2H Technologies</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		/>
+		<style>
+			/* Add your custom styles here */
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">
+					<img src="logo_2.png" alt="A2H Logo" style="height: 100px" />
+				</div>
+				<ul class="nav-links">
+					<li>
+						<a href="index.html"><b>Home</b></a>
+					</li>
+					<li>
+						<a href="services-page.html"><b>Services</b></a>
+					</li>
+					<li>
+						<a href="#about"><b>About Us</b></a>
+					</li>
+					<li>
+						<a href="careers.html"><b>Careers</b></a>
+					</li>
+					<li>
+						<a href="#contact"><b>Contact</b></a>
+					</li>
+				</ul>
+			</nav>
+			<div class="video-container">
+				<video class="rounded-video" autoplay loop muted>
+					<source src="Slides.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		</header>
+
+		<section id="about">
+			<div class="section-content">
+				<div class="about-text">
+					<h2>About Us</h2>
+					<p>
+						Founded in 2012, N2Force Technologies Systems has grown to include
+						technical training, staff augmentation, and project development and
+						management. We are able to provide sophisticated, cutting edge
+						solutions to common data management problems.
+					</p>
+
+					<h3>Our Values</h3>
+					<!-- Lorem Ipsum content added -->
+					<ul>
+						<li>Honesty</li>
+						<li>Integrity</li>
+						<li>Mutual Respect</li>
+						<li>Excellence in Delivery</li>
+					</ul>
+					<p>
+						Maintaining our core values ensures the best experience for our
+						customers. Our highly skilled professions will consistently exceed
+						all expectations!
+					</p>
+					<h2>Our Team</h2>
+					<p>
+						N2Force Technologies's most valuable asset is our people. We are a
+						family-friendly, culturally diverse company. Our people are
+						acknowledged for their exceptional talent, innovation, creativity,
+						and willingness to learn. Building strong relationships with each
+						other is a top priority for us. Team projects and group learning
+						exercises help develop a strong support network for our consultants
+						in the field.
+					</p>
+					<strong
+						>Certified professionals From HortonWorks, Cloudera and
+						Talend</strong
+					>
+					<strong>HortonWorks/Cloudera - Implemented Solutions at</strong>
+
+					<ul>
+						<li>
+							BCBSA (Stood up Big Data Env, architect, design and operations)
+						</li>
+						<li>JCI(Predictive analysis)</li>
+						<li>McDonalds, Koch( Consulting services)</li>
+					</ul>
+					<strong
+						>Talend- Provide Certified Consulting Services and Planing on
+						support(OnSite/Off shore)</strong
+					>
+					<ul>
+						<li>IHG, HP, McDonalds, Sempra, Walgreens</li>
+					</ul>
+
+					<strong>In house solutions for patents in data analytics. </strong>
+					<ul>
+						<li>
+							2016 15th IEEE International Conference on machine learning and
+							Applications(ICMLA)
+						</li>
+					</ul>
+					<!-- <a href="index.html" class="read-more-abt"><b>Read More >></b></a> -->
+				</div>
+				<!-- <div class="about-image">
+					<img
+						src="your-about-image-src.jpg"
+						alt="About Us"
+						style="width: 100%"
+					/>
+				</div> -->
+			</div>
+		</section>
+
+		<footer>
+			<p><b>© 2024 A2H Solutions Inc. All rights reserved.</b></p>
+		</footer>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("visible");
+							} else {
+								// Optionally reset the animation if you want it to trigger every time the section comes into view
+								entry.target.classList.remove("visible");
+							}
+						});
+					},
+					{
+						threshold: 0.1, // This can be adjusted based on your needs
+					}
+				);
+
+				// Target elements with the 'services-content' class
+				document
+					.querySelectorAll(".section-content")
+					.forEach((el) => observer.observe(el));
+			});
+		</script>
+	</body>
+</html>
